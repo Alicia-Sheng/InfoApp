@@ -7,6 +7,10 @@ class SecondScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: this.props.route.params.name,
+            month: this.props.route.params.month,
+            date: this.props.route.params.date,
+            food: this.props.route.params.food,
             color: 'color',
             meal: 'meal',
             year: 'year',
@@ -35,20 +39,20 @@ class SecondScreen extends React.Component {
                     selectedValue={this.state.meal}
                     style={styles.picker}
                     onValueChange={(itemValue, itemIndex) =>
-                        this.setState({date: itemValue})
+                        this.setState({meal: itemValue})
                     }>
                     <Picker.Item label="Breakfast" value="breakfast" />
                     <Picker.Item label="Brunch" value="brunch" />
                     <Picker.Item label="Lunch" value="lunch" />
                     <Picker.Item label="Dinner" value="dinner" />
-                    <Picker.Item label="Late Night" value="lateNight" />
+                    <Picker.Item label="Late Night" value="late night" />
                 </Picker>
                 <Text>Which year are you in college?</Text>
                 <Picker
                     selectedValue={this.state.year}
                     style={styles.picker}
                     onValueChange={(itemValue, itemIndex) =>
-                        this.setState({date: itemValue})
+                        this.setState({year: itemValue})
                     }>
                     <Picker.Item label="Freshman" value="freshman" />
                     <Picker.Item label="Sophomore" value="sohomore" />
@@ -57,7 +61,15 @@ class SecondScreen extends React.Component {
                 </Picker>
                 <Button
                     title="Go to Summary Screen"
-                    onPress={() => this.props.navigation.navigate('Third Screen')}
+                    onPress={() => this.props.navigation.navigate('Third Screen', {
+                        name: this.state.name,
+                        month: this.state.month,
+                        date: this.state.date,
+                        food: this.state.food,
+                        color: this.state.color,
+                        meal: this.state.meal,
+                        year: this.state.year,
+                    })}
                 />
             </View>
         )

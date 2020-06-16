@@ -21,6 +21,18 @@ class FirstScreen extends React.Component {
         };
     };
 
+    monthHandleChange(val) {
+        if (val !== 0) {
+          this.setState({month: val});
+        }
+    }
+
+    dateHandleChange(val) {
+        if (val !== 0) {
+          this.setState({date: val});
+        }
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -33,9 +45,8 @@ class FirstScreen extends React.Component {
                 <Picker
                     selectedValue={this.state.month}
                     style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({month: itemValue})
-                    }>
+                    onValueChange={this.monthHandleChange}>
+                    <Picker.Item label="Month" value="0" />
                     <Picker.Item label="January" value="Jan" />
                     <Picker.Item label="Feburary" value="Feb" />
                     <Picker.Item label="March" value="Mar" />
@@ -52,9 +63,8 @@ class FirstScreen extends React.Component {
                 <Picker
                     selectedValue={this.state.date}
                     style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({date: itemValue})
-                    }>
+                    onValueChange={this.dateHandleChange}>
+                    <Picker.Item label="Date" value="0" />
                     <Picker.Item label="1" value="1" />
                     <Picker.Item label="2" value="2" />
                     <Picker.Item label="3" value="3" />
@@ -94,7 +104,12 @@ class FirstScreen extends React.Component {
                 />
                 <Button
                     title="Next"
-                    onPress={() => this.props.navigation.navigate('Second Screen')}
+                    onPress={() => this.props.navigation.navigate('Second Screen', {
+                        name: this.state.name,
+                        month: this.state.month,
+                        date: this.state.date,
+                        food: this.state.food,
+                    })}
                 />
             </View>
         )
