@@ -1,11 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import FirstScreen from './Screens/FirstScreen';
+import SecondScreen from './Screens/SecondScreen';
+import ThirdScreen from './Screens/ThirdScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator initialRouteName="First Screen">
+        <Stack.Screen name="First Screen" component={FirstScreen} />
+        <Stack.Screen name="Second Screen" component={SecondScreen} />
+        <Stack.Screen name="Third Screen" component={ThirdScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
