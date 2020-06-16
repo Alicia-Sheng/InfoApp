@@ -18,20 +18,30 @@ class SecondScreen extends React.Component {
     };
 
     colorChangeHandler = (val) => {
-        if (val !== 0) {
-          this.setState({color: val});
-        }
+        this.setState({color: val});
     };
 
     mealChangeHandler = (val) => {
-        if (val !== 0) {
-          this.setState({meal: val});
-        }
+        this.setState({meal: val});
     };
 
     yearChangeHandler = (val) => {
-        if (val !== 0) {
-          this.setState({year: val});
+        this.setState({year: val});
+    };
+
+    onPressHandler = () => {
+        if (this.state.color !== '' && this.state.meal !== '' && this.state.year !== '') {
+            this.props.navigation.navigate('Third Screen', {
+                name: this.state.name,
+                month: this.state.month,
+                date: this.state.date,
+                food: this.state.food,
+                color: this.state.color,
+                meal: this.state.meal,
+                year: this.state.year,
+            })
+        } else {
+            alert("Please answer the questions.")
         }
     };
 
@@ -44,7 +54,7 @@ class SecondScreen extends React.Component {
                     style={styles.picker}
                     onValueChange={this.colorChangeHandler}
                 >
-                    <Picker.Item label='Color' value='0' />
+                    <Picker.Item label='Color' value='' />
                     <Picker.Item label='Red' value='Red' />
                     <Picker.Item label='Orange' value='Orange' />
                     <Picker.Item label='Yellow' value='Yellow' />
@@ -58,7 +68,7 @@ class SecondScreen extends React.Component {
                     style={styles.picker}
                     onValueChange={this.mealChangeHandler}
                 >
-                    <Picker.Item label='Meal' value='0' />
+                    <Picker.Item label='Meal' value='' />
                     <Picker.Item label='Breakfast' value='Breakfast' />
                     <Picker.Item label='Brunch' value='Brunch' />
                     <Picker.Item label='Lunch' value='Lunch' />
@@ -71,7 +81,7 @@ class SecondScreen extends React.Component {
                     style={styles.picker}
                     onValueChange={this.yearChangeHandler}
                 >
-                    <Picker.Item label='Year' value='0' />
+                    <Picker.Item label='Year' value='' />
                     <Picker.Item label='Freshman' value='Freshman' />
                     <Picker.Item label='Sophomore' value='Sohomore' />
                     <Picker.Item label='Junior' value='Junior' />
@@ -80,15 +90,7 @@ class SecondScreen extends React.Component {
                 <Button
                     title='Go to Summary Screen'
                     color='pink'
-                    onPress={() => this.props.navigation.navigate('Third Screen', {
-                        name: this.state.name,
-                        month: this.state.month,
-                        date: this.state.date,
-                        food: this.state.food,
-                        color: this.state.color,
-                        meal: this.state.meal,
-                        year: this.state.year,
-                    })}
+                    onPress={this.onPressHandler}
                 />
             </View>
         )

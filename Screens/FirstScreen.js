@@ -24,14 +24,23 @@ class FirstScreen extends React.Component {
     };
 
     monthChangeHandler = (val) => {
-        if (val !== 0) {
-          this.setState({month: val});
-        }
+        this.setState({month: val});
     };
 
     dateChangeHandler = (val) => {
-        if (val !== 0) {
-          this.setState({date: val});
+        this.setState({date: val});
+    };
+
+    onPressHandler = () => {
+        if (this.state.name !== '' && this.state.month !== '' && this.state.date !== '' && this.state.food !== '') {
+            this.props.navigation.navigate('Second Screen', {
+                name: this.state.name,
+                month: this.state.month,
+                date: this.state.date,
+                food: this.state.food,
+            })
+        } else {
+            alert("Please answer the questions.")
         }
     };
 
@@ -49,7 +58,7 @@ class FirstScreen extends React.Component {
                     style={styles.picker}
                     onValueChange={this.monthChangeHandler}
                 >
-                    <Picker.Item label='Month' value='0' />
+                    <Picker.Item label='Month' value='' />
                     <Picker.Item label='January' value='Jan' />
                     <Picker.Item label='Feburary' value='Feb' />
                     <Picker.Item label='March' value='Mar' />
@@ -68,7 +77,7 @@ class FirstScreen extends React.Component {
                     style={styles.picker}
                     onValueChange={this.dateChangeHandler}
                 >
-                    <Picker.Item label='Date' value='0' />
+                    <Picker.Item label='Date' value='' />
                     <Picker.Item label='1' value='1' />
                     <Picker.Item label='2' value='2' />
                     <Picker.Item label='3' value='3' />
@@ -109,12 +118,7 @@ class FirstScreen extends React.Component {
                 <Button
                     title='Next'
                     color='green'
-                    onPress={() => this.props.navigation.navigate('Second Screen', {
-                        name: this.state.name,
-                        month: this.state.month,
-                        date: this.state.date,
-                        food: this.state.food,
-                    })}
+                    onPress={this.onPressHandler}
                 />
             </View>
         )
