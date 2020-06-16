@@ -26,7 +26,7 @@ class ThirdScreen extends React.Component {
                 <Text>Favorite Meal of Day: {this.state.meal}</Text>
                 <Text>Year in College: {this.state.year}</Text>
                 <Button
-                    title="Go to First Screen"
+                    title='Go to First Screen'
                     onPress={() => this.props.navigation.navigate('First Screen')}
                 />
             </View>

@@ -11,10 +11,28 @@ class SecondScreen extends React.Component {
             month: this.props.route.params.month,
             date: this.props.route.params.date,
             food: this.props.route.params.food,
-            color: 'color',
-            meal: 'meal',
-            year: 'year',
+            color: '',
+            meal: '',
+            year: '',
         };
+    };
+
+    colorChangeHandler = (val) => {
+        if (val !== 0) {
+          this.setState({color: val});
+        }
+    };
+
+    mealChangeHandler = (val) => {
+        if (val !== 0) {
+          this.setState({meal: val});
+        }
+    };
+
+    yearChangeHandler = (val) => {
+        if (val !== 0) {
+          this.setState({year: val});
+        }
     };
 
     render() {
@@ -24,43 +42,44 @@ class SecondScreen extends React.Component {
                 <Picker
                     selectedValue={this.state.color}
                     style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({color: itemValue})
-                    }>
-                    <Picker.Item label="Red" value="red" />
-                    <Picker.Item label="Orange" value="orange" />
-                    <Picker.Item label="Yellow" value="yellow" />
-                    <Picker.Item label="Green" value="green" />
-                    <Picker.Item label="Blue" value="blue" />
-                    <Picker.Item label="Purple" value="purple" />
+                    onValueChange={this.colorChangeHandler}
+                >
+                    <Picker.Item label='Color' value='0' />
+                    <Picker.Item label='Red' value='Red' />
+                    <Picker.Item label='Orange' value='Orange' />
+                    <Picker.Item label='Yellow' value='Yellow' />
+                    <Picker.Item label='Green' value='Green' />
+                    <Picker.Item label='Blue' value='Blue' />
+                    <Picker.Item label='Purple' value='Purple' />
                 </Picker>
                 <Text>Which meal of the day is your favorite?</Text>
                 <Picker
                     selectedValue={this.state.meal}
                     style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({meal: itemValue})
-                    }>
-                    <Picker.Item label="Breakfast" value="breakfast" />
-                    <Picker.Item label="Brunch" value="brunch" />
-                    <Picker.Item label="Lunch" value="lunch" />
-                    <Picker.Item label="Dinner" value="dinner" />
-                    <Picker.Item label="Late Night" value="late night" />
+                    onValueChange={this.mealChangeHandler}
+                >
+                    <Picker.Item label='Meal' value='0' />
+                    <Picker.Item label='Breakfast' value='Breakfast' />
+                    <Picker.Item label='Brunch' value='Brunch' />
+                    <Picker.Item label='Lunch' value='Lunch' />
+                    <Picker.Item label='Dinner' value='Dinner' />
+                    <Picker.Item label='Late Night' value='Late Night' />
                 </Picker>
                 <Text>Which year are you in college?</Text>
                 <Picker
                     selectedValue={this.state.year}
                     style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({year: itemValue})
-                    }>
-                    <Picker.Item label="Freshman" value="freshman" />
-                    <Picker.Item label="Sophomore" value="sohomore" />
-                    <Picker.Item label="Junior" value="junior" />
-                    <Picker.Item label="Senior" value="senior" />
+                    onValueChange={this.yearChangeHandler}
+                >
+                    <Picker.Item label='Year' value='0' />
+                    <Picker.Item label='Freshman' value='Freshman' />
+                    <Picker.Item label='Sophomore' value='Sohomore' />
+                    <Picker.Item label='Junior' value='Junior' />
+                    <Picker.Item label='Senior' value='Senior' />
                 </Picker>
                 <Button
-                    title="Go to Summary Screen"
+                    title='Go to Summary Screen'
+                    color='pink'
                     onPress={() => this.props.navigation.navigate('Third Screen', {
                         name: this.state.name,
                         month: this.state.month,
