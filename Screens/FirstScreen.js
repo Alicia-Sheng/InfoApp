@@ -12,26 +12,27 @@ class FirstScreen extends React.Component {
             date: '',
             food: '',
         };
-        this.nameInputHandler = (enteredText) => {
-            this.setState({name: enteredText});
-        };
-        
-        this.foodInputHandler = (enteredText) => {
-            this.setState({food: enteredText});
-        };
     };
 
-    monthHandleChange(val) {
+    nameInputHandler = (enteredText) => {
+        this.setState({name: enteredText});
+    };
+    
+    foodInputHandler = (enteredText) => {
+        this.setState({food: enteredText});
+    };
+
+    monthHandleChange = (val) => {
         if (val !== 0) {
           this.setState({month: val});
         }
-    }
+    };
 
-    dateHandleChange(val) {
+    dateHandleChange = (val) => {
         if (val !== 0) {
           this.setState({date: val});
         }
-    }
+    };
 
     render() {
         return (
