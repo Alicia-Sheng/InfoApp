@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { Picker } from '@react-native-community/picker';
-import { GoToButton } from '../components/GoToButton';
 
 class FirstScreen extends React.Component {
 
@@ -18,7 +17,7 @@ class FirstScreen extends React.Component {
                 <Text>First Screen</Text>
                 <Picker
                     selectedValue={this.state.language}
-                    style={{height: 50, width: 100}}
+                    style={styles.picker}
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({language: itemValue})
                     }>
@@ -40,6 +39,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    picker: {
+        height: 50,
+        width: 100,
     },
 });
 
