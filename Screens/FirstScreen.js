@@ -52,7 +52,6 @@ class FirstScreen extends React.Component {
                     style={styles.input}
                     onChangeText={this.nameInputHandler}
                 />
-                <Text>Please select your birth month and date: </Text>
                 <Picker
                     selectedValue={this.state.month}
                     style={styles.picker}
