@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import {Picker} from '@react-native-community/picker';
 
 const SecondScreen = ({ navigation }) => (
     <View style={styles.container}>
