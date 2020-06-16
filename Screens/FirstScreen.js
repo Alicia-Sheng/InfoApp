@@ -12,9 +12,26 @@ class FirstScreen extends React.Component {
             month: '',
             date: '',
             food: '',
+            color: '',
+            meal: '',
+            year: '',
         };
     };
 
+    componentDidMount() {
+        this._unsubscribe = this.props.navigation.addListener('focus', () => {
+            this.setState({
+                name: '',
+                month: '',
+                date: '',
+                food: '',
+                color: '',
+                meal: '',
+                year: '',
+            });
+        });
+    };
+      
     nameInputHandler = (enteredText) => {
         this.setState({name: enteredText});
     };
@@ -132,7 +149,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     input: {
-
+        margin: 10,
     },
     picker: {
         height: 50,

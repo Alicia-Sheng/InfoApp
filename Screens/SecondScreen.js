@@ -11,9 +11,9 @@ class SecondScreen extends React.Component {
             month: this.props.route.params.month,
             date: this.props.route.params.date,
             food: this.props.route.params.food,
-            color: '',
-            meal: '',
-            year: '',
+            color: this.props.route.params.color,
+            meal: this.props.route.params.meal,
+            year: this.props.route.params.year,
         };
     };
 
