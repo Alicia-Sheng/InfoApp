@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Picker } from '@react-native-community/picker';
-import { greaterThan } from 'react-native-reanimated';
+import data from '../data.js';
 
 class FirstScreen extends React.Component {
 
@@ -79,6 +79,8 @@ class FirstScreen extends React.Component {
                     onValueChange={this.monthChangeHandler}
                 >
                     <Picker.Item label='Month' value='' />
+                    {/*{data.map((month) => {if (month.type === 'month') {return (<Picker.Item key={month.id} label={month.label} value={month.value} />)}})}*/}
+                    <Picker.Item label='Month' value='' />
                     <Picker.Item label='January' value='Jan' />
                     <Picker.Item label='Feburary' value='Feb' />
                     <Picker.Item label='March' value='Mar' />
@@ -98,6 +100,7 @@ class FirstScreen extends React.Component {
                     onValueChange={this.dateChangeHandler}
                 >
                     <Picker.Item label='Date' value='' />
+                    {/*{data.map((date) => {if (date.type === 'date') {return (<Picker.Item key={date.id} label={date.label} value={date.value} />)}})}*/}
                     <Picker.Item label='1' value='1' />
                     <Picker.Item label='2' value='2' />
                     <Picker.Item label='3' value='3' />

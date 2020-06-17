@@ -16,6 +16,10 @@ class ThirdScreen extends React.Component {
         };
     };
 
+    onPressHandler = () => {
+        this.props.navigation.navigate('First Screen');
+    };
+
     render() {
         return (
             <View style={styles.container}>
@@ -27,7 +31,7 @@ class ThirdScreen extends React.Component {
                 <Text>Year in College: {this.state.year}</Text>
                 <Button
                     title='Go to First Screen'
-                    onPress={() => this.props.navigation.navigate('First Screen')}
+                    onPress={this.onPressHandler}
                 />
             </View>
         )
