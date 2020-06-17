@@ -23,16 +23,20 @@ class ThirdScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Name: {this.state.name}</Text>
-                <Text>Birthday: {this.state.month}, {this.state.date}</Text>
-                <Text>Favorite Food: {this.state.food}</Text>
-                <Text>Favorite Color: {this.state.color}</Text>
-                <Text>Favorite Meal of Day: {this.state.meal}</Text>
-                <Text>Year in College: {this.state.year}</Text>
-                <Button
-                    title='Go to First Screen'
-                    onPress={this.onPressHandler}
-                />
+                <View style={styles.upContainer}>
+                    <View style={styles.text}>
+                        <Text>Name: {this.state.name}</Text>
+                        <Text>Birthday: {this.state.month}, {this.state.date}</Text>
+                        <Text>Favorite Food: {this.state.food}</Text>
+                        <Text>Favorite Color: {this.state.color}</Text>
+                        <Text>Favorite Meal of Day: {this.state.meal}</Text>
+                        <Text>Year in College: {this.state.year}</Text>
+                    </View>
+                    <Button
+                        title='Go to First Screen'
+                        onPress={this.onPressHandler}
+                    />
+                </View>
             </View>
         )
     }
@@ -41,9 +45,18 @@ class ThirdScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#8BA4B3',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    upContainer: {
+        flex: 0.8,
+        width: 300,
+        backgroundColor: '#fff',
+        padding: 30,
+    },
+    text: {
+        flex: 1,
     },
 });
 

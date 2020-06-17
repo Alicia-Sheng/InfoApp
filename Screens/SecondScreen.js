@@ -48,50 +48,54 @@ class SecondScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>What is your favorit color?</Text>
-                <Picker
-                    selectedValue={this.state.color}
-                    style={styles.picker}
-                    onValueChange={this.colorChangeHandler}
-                >
-                    <Picker.Item label='Color' value='' />
-                    <Picker.Item label='Red' value='Red' />
-                    <Picker.Item label='Orange' value='Orange' />
-                    <Picker.Item label='Yellow' value='Yellow' />
-                    <Picker.Item label='Green' value='Green' />
-                    <Picker.Item label='Blue' value='Blue' />
-                    <Picker.Item label='Purple' value='Purple' />
-                </Picker>
-                <Text>Which meal of the day is your favorite?</Text>
-                <Picker
-                    selectedValue={this.state.meal}
-                    style={styles.picker}
-                    onValueChange={this.mealChangeHandler}
-                >
-                    <Picker.Item label='Meal' value='' />
-                    <Picker.Item label='Breakfast' value='Breakfast' />
-                    <Picker.Item label='Brunch' value='Brunch' />
-                    <Picker.Item label='Lunch' value='Lunch' />
-                    <Picker.Item label='Dinner' value='Dinner' />
-                    <Picker.Item label='Late Night' value='Late Night' />
-                </Picker>
-                <Text>Which year are you in college?</Text>
-                <Picker
-                    selectedValue={this.state.year}
-                    style={styles.picker}
-                    onValueChange={this.yearChangeHandler}
-                >
-                    <Picker.Item label='Year' value='' />
-                    <Picker.Item label='Freshman' value='Freshman' />
-                    <Picker.Item label='Sophomore' value='Sohomore' />
-                    <Picker.Item label='Junior' value='Junior' />
-                    <Picker.Item label='Senior' value='Senior' />
-                </Picker>
-                <Button
-                    title='Go to Summary Screen'
-                    color='pink'
-                    onPress={this.onPressHandler}
-                />
+                <View style={styles.upContainer}>
+                    <View style={styles.questions}>
+                        <Text>What is your favorit color?</Text>
+                        <Picker
+                            selectedValue={this.state.color}
+                            style={styles.picker}
+                            onValueChange={this.colorChangeHandler}
+                        >
+                            <Picker.Item label='Color' value='' />
+                            <Picker.Item label='Red' value='Red' />
+                            <Picker.Item label='Orange' value='Orange' />
+                            <Picker.Item label='Yellow' value='Yellow' />
+                            <Picker.Item label='Green' value='Green' />
+                            <Picker.Item label='Blue' value='Blue' />
+                            <Picker.Item label='Purple' value='Purple' />
+                        </Picker>
+                        <Text>Which meal of the day is your favorite?</Text>
+                        <Picker
+                            selectedValue={this.state.meal}
+                            style={styles.picker}
+                            onValueChange={this.mealChangeHandler}
+                        >
+                            <Picker.Item label='Meal' value='' />
+                            <Picker.Item label='Breakfast' value='Breakfast' />
+                            <Picker.Item label='Brunch' value='Brunch' />
+                            <Picker.Item label='Lunch' value='Lunch' />
+                            <Picker.Item label='Dinner' value='Dinner' />
+                            <Picker.Item label='Late Night' value='Late Night' />
+                        </Picker>
+                        <Text>Which year are you in college?</Text>
+                        <Picker
+                            selectedValue={this.state.year}
+                            style={styles.picker}
+                            onValueChange={this.yearChangeHandler}
+                        >
+                            <Picker.Item label='Year' value='' />
+                            <Picker.Item label='Freshman' value='Freshman' />
+                            <Picker.Item label='Sophomore' value='Sohomore' />
+                            <Picker.Item label='Junior' value='Junior' />
+                            <Picker.Item label='Senior' value='Senior' />
+                        </Picker>
+                    </View>
+                    <Button
+                        title='Go to Summary Screen'
+                        color='pink'
+                        onPress={this.onPressHandler}
+                    />
+                </View>
             </View>
         )
     }
@@ -100,9 +104,18 @@ class SecondScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#FFE7E7',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    upContainer: {
+        flex: 0.8,
+        width: 300,
+        backgroundColor: '#fff',
+        padding: 30,
+    },
+    questions: {
+        flex: 1,
     },
     picker: {
         height: 50,
