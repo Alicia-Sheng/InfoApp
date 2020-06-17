@@ -8,16 +8,18 @@ import ThirdScreen from './Screens/ThirdScreen';
 
 const Stack = createStackNavigator();
 
-export default function App() {
-  return (
-    <NavigationContainer style={styles.container}>
-      <Stack.Navigator initialRouteName="First Screen">
-        <Stack.Screen name="First Screen" component={FirstScreen} />
-        <Stack.Screen name="Second Screen" component={SecondScreen} />
-        <Stack.Screen name="Third Screen" component={ThirdScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer style={styles.container}>
+        <Stack.Navigator initialRouteName="First Screen">
+          <Stack.Screen name="First Screen" component={FirstScreen} />
+          <Stack.Screen name="Second Screen" component={SecondScreen} />
+          <Stack.Screen name="Third Screen" component={ThirdScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

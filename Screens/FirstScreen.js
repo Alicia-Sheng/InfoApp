@@ -55,6 +55,9 @@ class FirstScreen extends React.Component {
                 month: this.state.month,
                 date: this.state.date,
                 food: this.state.food,
+                color: this.state.color,
+                meal: this.state.meal,
+                year: this.state.year,
             })
         } else {
             alert("Please answer the questions.")
@@ -68,6 +71,7 @@ class FirstScreen extends React.Component {
                     placeholder='Name'
                     style={styles.input}
                     onChangeText={this.nameInputHandler}
+                    value={this.state.name}
                 />
                 <Picker
                     selectedValue={this.state.month}
@@ -129,7 +133,8 @@ class FirstScreen extends React.Component {
                 <TextInput
                     placeholder='Favorite Food'
                     style={styles.input}
-                    onChangeText={this.foodInputHandler}                
+                    onChangeText={this.foodInputHandler}  
+                    value={this.state.food}              
                 />
                 <Button
                     title='Next'
