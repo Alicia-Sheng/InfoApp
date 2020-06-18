@@ -109,13 +109,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     upContainer: {
-        flex: 0.8,
-        width: 300,
+        flex: 0.85,
+        width: '80%',
         backgroundColor: '#fff',
         padding: 30,
     },
     questions: {
         flex: 1,
+        paddingBottom: 10,
     },
     picker: {
         height: 50,
