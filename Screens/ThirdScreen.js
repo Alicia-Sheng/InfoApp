@@ -24,13 +24,13 @@ class ThirdScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.upContainer}>
-                    <View style={styles.text}>
-                        <Text>Name: {this.state.name}</Text>
-                        <Text>Birthday: {this.state.month}, {this.state.date}</Text>
-                        <Text>Favorite Food: {this.state.food}</Text>
-                        <Text>Favorite Color: {this.state.color}</Text>
-                        <Text>Favorite Meal of Day: {this.state.meal}</Text>
-                        <Text>Year in College: {this.state.year}</Text>
+                    <View style={styles.body}>
+                        <Text style={styles.text}>Name: {this.state.name}</Text>
+                        <Text style={styles.text}>Birthday: {this.state.month}, {this.state.date}</Text>
+                        <Text style={styles.text}>Favorite Food: {this.state.food}</Text>
+                        <Text style={styles.text}>Favorite Color: {this.state.color}</Text>
+                        <Text style={styles.text}>Favorite Meal of Day: {this.state.meal}</Text>
+                        <Text style={styles.text}>Year in College: {this.state.year}</Text>
                     </View>
                     <Button
                         title='Go to First Screen'
@@ -50,13 +50,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     upContainer: {
-        flex: 0.85,
-        width: '80%',
+        height: '85%',
+        width: '85%',
         backgroundColor: '#fff',
         padding: 30,
     },
-    text: {
+    body: {
         flex: 1,
+        paddingBottom: 20,
+    },
+    text: {
+        fontSize: 15,
+        marginBottom: 10,
     },
 });
 

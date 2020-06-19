@@ -49,46 +49,52 @@ class SecondScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.upContainer}>
-                    <View style={styles.questions}>
-                        <Text>What is your favorit color?</Text>
-                        <Picker
-                            selectedValue={this.state.color}
-                            style={styles.picker}
-                            onValueChange={this.colorChangeHandler}
-                        >
-                            <Picker.Item label='Color' value='' />
-                            <Picker.Item label='Red' value='Red' />
-                            <Picker.Item label='Orange' value='Orange' />
-                            <Picker.Item label='Yellow' value='Yellow' />
-                            <Picker.Item label='Green' value='Green' />
-                            <Picker.Item label='Blue' value='Blue' />
-                            <Picker.Item label='Purple' value='Purple' />
-                        </Picker>
-                        <Text>Which meal of the day is your favorite?</Text>
-                        <Picker
-                            selectedValue={this.state.meal}
-                            style={styles.picker}
-                            onValueChange={this.mealChangeHandler}
-                        >
-                            <Picker.Item label='Meal' value='' />
-                            <Picker.Item label='Breakfast' value='Breakfast' />
-                            <Picker.Item label='Brunch' value='Brunch' />
-                            <Picker.Item label='Lunch' value='Lunch' />
-                            <Picker.Item label='Dinner' value='Dinner' />
-                            <Picker.Item label='Late Night' value='Late Night' />
-                        </Picker>
-                        <Text>Which year are you in college?</Text>
-                        <Picker
-                            selectedValue={this.state.year}
-                            style={styles.picker}
-                            onValueChange={this.yearChangeHandler}
-                        >
-                            <Picker.Item label='Year' value='' />
-                            <Picker.Item label='Freshman' value='Freshman' />
-                            <Picker.Item label='Sophomore' value='Sohomore' />
-                            <Picker.Item label='Junior' value='Junior' />
-                            <Picker.Item label='Senior' value='Senior' />
-                        </Picker>
+                    <View style={styles.body}>
+                        <View style={styles.question}>
+                            <Text style={styles.text}>What is your favorite color?</Text>
+                            <Picker
+                                selectedValue={this.state.color}
+                                style={styles.picker}
+                                onValueChange={this.colorChangeHandler}
+                            >
+                                <Picker.Item label='Color' value='' />
+                                <Picker.Item label='Red' value='Red' />
+                                <Picker.Item label='Orange' value='Orange' />
+                                <Picker.Item label='Yellow' value='Yellow' />
+                                <Picker.Item label='Green' value='Green' />
+                                <Picker.Item label='Blue' value='Blue' />
+                                <Picker.Item label='Purple' value='Purple' />
+                            </Picker>
+                        </View>
+                        <View style={styles.question}>
+                            <Text style={styles.text}>Which meal of the day is your favorite?</Text>
+                            <Picker
+                                selectedValue={this.state.meal}
+                                style={styles.picker}
+                                onValueChange={this.mealChangeHandler}
+                            >
+                                <Picker.Item label='Meal' value='' />
+                                <Picker.Item label='Breakfast' value='Breakfast' />
+                                <Picker.Item label='Brunch' value='Brunch' />
+                                <Picker.Item label='Lunch' value='Lunch' />
+                                <Picker.Item label='Dinner' value='Dinner' />
+                                <Picker.Item label='Late Night' value='Late Night' />
+                            </Picker>
+                        </View>
+                        <View style={styles.question}>
+                            <Text style={styles.text}>Which year are you in college?</Text>
+                            <Picker
+                                selectedValue={this.state.year}
+                                style={styles.picker}
+                                onValueChange={this.yearChangeHandler}
+                            >
+                                <Picker.Item label='Year' value='' />
+                                <Picker.Item label='Freshman' value='Freshman' />
+                                <Picker.Item label='Sophomore' value='Sohomore' />
+                                <Picker.Item label='Junior' value='Junior' />
+                                <Picker.Item label='Senior' value='Senior' />
+                            </Picker>
+                        </View>
                     </View>
                     <Button
                         title='Go to Summary Screen'
@@ -109,18 +115,25 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     upContainer: {
-        flex: 0.85,
-        width: '80%',
+        height: '85%',
+        width: '85%',
         backgroundColor: '#fff',
         padding: 30,
     },
-    questions: {
+    body: {
         flex: 1,
-        paddingBottom: 10,
+        paddingBottom: 20,
     },
     picker: {
-        height: 50,
         width: 150,
+    },
+    question: {
+        marginBottom: 25,
+    },
+    text: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        marginBottom: 5,
     },
 });
 

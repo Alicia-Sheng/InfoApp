@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import data from '../data.js';
-/*context*/
 
 const PickerList = ({ item, changeHandler, type }) => {
     return (
@@ -80,51 +79,64 @@ class FirstScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.upContainer}>
-                    <View style={styles.questions}>
-                        <ScrollView>
-                            <TextInput
-                                placeholder='Name'
-                                style={styles.input}
-                                onChangeText={this.nameInputHandler}
-                                value={this.state.name}
+                    <View style={styles.container}>
+                        <View style={styles.upContainer}>
+                            <View style={styles.body}>
+                                <ScrollView>
+                                    <View style={styles.question}>
+                                        <Text style={styles.text}>Please enter your name here:</Text>
+                                        <View style={styles.inputContainer}>
+                                            <TextInput
+                                                placeholder='Name'
+                                                style={styles.input}
+                                                onChangeText={this.nameInputHandler}
+                                                value={this.state.name}
+                                            />
+                                        </View>
+                                    </View>
+                                    <View style={styles.question}>
+                                        <Text style={styles.text}>Please select your birth month and date:</Text>
+                                        <Picker
+                                            selectedValue={this.state.month}
+                                            style={styles.picker}
+                                            onValueChange={this.monthChangeHandler}
+                                        >
+                                            <Picker.Item label='Month' value='' />
+                                            <Picker.Item label='January' value='Jan' />
+                                            <Picker.Item label='Feburary' value='Feb' />
+                                            <Picker.Item label='March' value='Mar' />
+                                            <Picker.Item label='April' value='Apr' />
+                                            <Picker.Item label='May' value='May' />
+                                            <Picker.Item label='June' value='Jun' />
+                                            <Picker.Item label='July' value='Jul' />
+                                            <Picker.Item label='August' value='Aug' />
+                                            <Picker.Item label='September' value='Sep' />
+                                            <Picker.Item label='Octobor' value='Oct' />
+                                            <Picker.Item label='November' value='Nov' />
+                                            <Picker.Item label='December' value='Dec' />
+                                        </Picker>
+                                        <PickerList item={this.state.date} changeHandler={this.dateChangeHandler} type={'Date'} />
+                                    </View>
+                                    <View style={styles.question}>
+                                        <Text style={styles.text}>What is your favorite food?</Text>
+                                        <View style={styles.inputContainer}>
+                                            <TextInput
+                                                placeholder='Favorite Food'
+                                                style={styles.input}
+                                                onChangeText={this.foodInputHandler}  
+                                                value={this.state.food}              
+                                            />
+                                        </View>
+                                    </View>
+                                </ScrollView>
+                            </View>
+                            <Button
+                                title='Next'
+                                color='#9CB2A5'
+                                onPress={this.onPressHandler}
                             />
-                            <Picker
-                                selectedValue={this.state.month}
-                                style={styles.picker}
-                                onValueChange={this.monthChangeHandler}
-                            >
-                                <Picker.Item label='Month' value='' />
-                                <Picker.Item label='January' value='Jan' />
-                                <Picker.Item label='Feburary' value='Feb' />
-                                <Picker.Item label='March' value='Mar' />
-                                <Picker.Item label='April' value='Apr' />
-                                <Picker.Item label='May' value='May' />
-                                <Picker.Item label='June' value='Jun' />
-                                <Picker.Item label='July' value='Jul' />
-                                <Picker.Item label='August' value='Aug' />
-                                <Picker.Item label='September' value='Sep' />
-                                <Picker.Item label='Octobor' value='Oct' />
-                                <Picker.Item label='November' value='Nov' />
-                                <Picker.Item label='December' value='Dec' />
-                            </Picker>
-                            <PickerList item={this.state.date} changeHandler={this.dateChangeHandler} type={'Date'} />
-                            <TextInput
-                                placeholder='Favorite Food'
-                                style={styles.input}
-                                onChangeText={this.foodInputHandler}  
-                                value={this.state.food}              
-                            />
-                        </ScrollView>
+                        </View>
                     </View>
-                    <Button
-                        title='Next'
-                        color='#9CB2A5'
-                        onPress={this.onPressHandler}
-                    />
-                </View>
-            </View>
         )
     }
 };
@@ -137,21 +149,34 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     upContainer: {
-        flex: 0.85,
-        width: '80%',
+        height: '85%',
+        width: '85%',
         backgroundColor: '#fff',
         padding: 30,
     },
-    questions: {
+    body: {
         flex: 1,
-        paddingBottom: 10,
+        paddingBottom: 20,
+    },
+    question: {
+        marginBottom: 25,
     },
     input: {
-        margin: 10,
+        marginTop: 10,
+        fontSize: 15,
     },
     picker: {
-        height: 50,
         width: 150,
+    },
+    inputContainer: {
+        width: 200,
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+    },
+    text: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        marginBottom: 5,
     },
 });
 
