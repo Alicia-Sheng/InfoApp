@@ -29,7 +29,7 @@ class ThirdScreen extends React.Component {
                                 <Text style={styles.text}>Year in College: {info.year}</Text>
                             </View>
                             <Button
-                                title='Go to First Screen'
+                                title='Start Again'
                                 buttonStyle={{
                                     backgroundColor: '#2d5986',
                                     borderRadius: 10,
