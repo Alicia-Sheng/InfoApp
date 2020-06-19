@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import { Button } from 'react-native-elements';
 import { Picker } from '@react-native-community/picker';
 import data from '../data.js';
 
@@ -132,7 +133,11 @@ class FirstScreen extends React.Component {
                             </View>
                             <Button
                                 title='Next'
-                                color='#9CB2A5'
+                                buttonStyle={{
+                                    backgroundColor: '#9CB2A5',
+                                    borderRadius: 10,
+                                }}
+                                raised
                                 onPress={this.onPressHandler}
                             />
                         </View>

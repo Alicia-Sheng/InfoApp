@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 import { Picker } from '@react-native-community/picker';
 
 class SecondScreen extends React.Component {
@@ -98,7 +99,11 @@ class SecondScreen extends React.Component {
                     </View>
                     <Button
                         title='Go to Summary Screen'
-                        color='#ff8080'
+                        buttonStyle={{
+                            backgroundColor: '#E48EAD',
+                            borderRadius: 10,
+                        }}
+                        raised
                         onPress={this.onPressHandler}
                     />
                 </View>
@@ -110,7 +115,7 @@ class SecondScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFD9D9',
+        backgroundColor: '#C1A4C3',
         alignItems: 'center',
         justifyContent: 'center',
     },

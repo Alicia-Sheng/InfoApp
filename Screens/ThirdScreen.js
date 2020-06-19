@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 class ThirdScreen extends React.Component {
 
@@ -34,7 +35,11 @@ class ThirdScreen extends React.Component {
                     </View>
                     <Button
                         title='Go to First Screen'
-                        color='#2d5986'
+                        buttonStyle={{
+                            backgroundColor: '#2d5986',
+                            borderRadius: 10,
+                        }}
+                        raised
                         onPress={this.onPressHandler}
                     />
                 </View>
