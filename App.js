@@ -5,13 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from './Screens/FirstScreen';
 import SecondScreen from './Screens/SecondScreen';
 import ThirdScreen from './Screens/ThirdScreen';
-import { InfoContext } from './Context/InfoContext';
+import { InfoProvider } from './provider/InfoProvider';
 
 const Stack = createStackNavigator();
 
 export default class App extends React.Component {
   render() {
     return (
+      <InfoProvider>
         <NavigationContainer style={styles.container}>
           <Stack.Navigator initialRouteName="First Screen">
             <Stack.Screen name="First Screen" component={FirstScreen} options={{ title: 'You Are...' }} />
@@ -19,6 +20,7 @@ export default class App extends React.Component {
             <Stack.Screen name="Third Screen" component={ThirdScreen} options={{ title: 'Here Is All About You' }}/>
           </Stack.Navigator>
         </NavigationContainer>
+      </InfoProvider>
     );
   }
 }

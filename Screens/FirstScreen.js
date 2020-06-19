@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Picker } from '@react-native-community/picker';
 import data from '../data.js';
+import { InfoContext } from '../provider/InfoProvider';
 
 const PickerList = ({ item, changeHandler, type }) => {
     return (
@@ -21,58 +22,11 @@ class FirstScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            name: '',
-            month: '',
-            date: '',
-            food: '',
-            color: '',
-            meal: '',
-            year: '',
-        };
     };
 
-    componentDidMount() {
-        this._unsubscribe = this.props.navigation.addListener('focus', () => {
-            this.setState({
-                name: '',
-                month: '',
-                date: '',
-                food: '',
-                color: '',
-                meal: '',
-                year: '',
-            });
-        });
-    };
-      
-    nameInputHandler = (enteredText) => {
-        this.setState({name: enteredText});
-    };
-    
-    foodInputHandler = (enteredText) => {
-        this.setState({food: enteredText});
-    };
-
-    monthChangeHandler = (val) => {
-        this.setState({month: val});
-    };
-
-    dateChangeHandler = (val) => {
-        this.setState({date: val});
-    };
-
-    onPressHandler = () => {
-        if (this.state.name !== '' && this.state.month !== '' && this.state.date !== '' && this.state.food !== '') {
-            this.props.navigation.navigate('Second Screen', {
-                name: this.state.name,
-                month: this.state.month,
-                date: this.state.date,
-                food: this.state.food,
-                color: this.state.color,
-                meal: this.state.meal,
-                year: this.state.year,
-            })
+    onPressHandler = (navigate) => {
+        if (navigate) {
+            this.props.navigation.navigate('Second Screen')
         } else {
             alert("Please finish all the questions.")
         }
@@ -80,6 +34,9 @@ class FirstScreen extends React.Component {
 
     render() {
         return (
+            <InfoContext.Consumer>
+                {
+                    info =>
                     <View style={styles.container}>
                         <View style={styles.upContainer}>
                             <View style={styles.body}>
@@ -90,17 +47,17 @@ class FirstScreen extends React.Component {
                                             <TextInput
                                                 placeholder='Name'
                                                 style={styles.input}
-                                                onChangeText={this.nameInputHandler}
-                                                value={this.state.name}
+                                                onChangeText={info.setName}
+                                                value={info.name}
                                             />
                                         </View>
                                     </View>
                                     <View style={styles.question}>
                                         <Text style={styles.text}>Please select your birth month and date:</Text>
                                         <Picker
-                                            selectedValue={this.state.month}
+                                            selectedValue={info.month}
                                             style={styles.picker}
-                                            onValueChange={this.monthChangeHandler}
+                                            onValueChange={info.setMonth}
                                         >
                                             <Picker.Item label='Month' value='' />
                                             <Picker.Item label='January' value='Jan' />
@@ -116,7 +73,7 @@ class FirstScreen extends React.Component {
                                             <Picker.Item label='November' value='Nov' />
                                             <Picker.Item label='December' value='Dec' />
                                         </Picker>
-                                        <PickerList item={this.state.date} changeHandler={this.dateChangeHandler} type={'Date'} />
+                                        <PickerList item={info.date} changeHandler={info.setDate} type={'Date'} />
                                     </View>
                                     <View style={styles.question}>
                                         <Text style={styles.text}>What is your favorite food?</Text>
@@ -124,8 +81,8 @@ class FirstScreen extends React.Component {
                                             <TextInput
                                                 placeholder='Favorite Food'
                                                 style={styles.input}
-                                                onChangeText={this.foodInputHandler}  
-                                                value={this.state.food}              
+                                                onChangeText={info.setFood}  
+                                                value={info.food}              
                                             />
                                         </View>
                                     </View>
@@ -138,10 +95,13 @@ class FirstScreen extends React.Component {
                                     borderRadius: 10,
                                 }}
                                 raised
-                                onPress={this.onPressHandler}
+                                onPress={() => {this.onPressHandler(info.name !== '' && info.month !== '' && info.date !== '' && info.food !== ''
+                                )}}
                             />
                         </View>
                     </View>
+                }
+            </InfoContext.Consumer>
         )
     }
 };

@@ -1,20 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
+import { InfoContext } from '../provider/InfoProvider';
 
 class ThirdScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            name: this.props.route.params.name,
-            month: this.props.route.params.month,
-            date: this.props.route.params.date,
-            food: this.props.route.params.food,
-            color: this.props.route.params.color,
-            meal: this.props.route.params.meal,
-            year: this.props.route.params.year,
-        };
     };
 
     onPressHandler = () => {
@@ -23,27 +15,32 @@ class ThirdScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.upContainer}>
-                    <View style={styles.body}>
-                        <Text style={styles.text}>Name: {this.state.name}</Text>
-                        <Text style={styles.text}>Birthday: {this.state.month}, {this.state.date}</Text>
-                        <Text style={styles.text}>Favorite Food: {this.state.food}</Text>
-                        <Text style={styles.text}>Favorite Color: {this.state.color}</Text>
-                        <Text style={styles.text}>Favorite Meal of Day: {this.state.meal}</Text>
-                        <Text style={styles.text}>Year in College: {this.state.year}</Text>
+            <InfoContext.Consumer>
+                {
+                    info =>
+                    <View style={styles.container}>
+                        <View style={styles.upContainer}>
+                            <View style={styles.body}>
+                                <Text style={styles.text}>Name: {info.name}</Text>
+                                <Text style={styles.text}>Birthday: {info.month}, {info.date}</Text>
+                                <Text style={styles.text}>Favorite Food: {info.food}</Text>
+                                <Text style={styles.text}>Favorite Color: {info.color}</Text>
+                                <Text style={styles.text}>Favorite Meal of Day: {info.meal}</Text>
+                                <Text style={styles.text}>Year in College: {info.year}</Text>
+                            </View>
+                            <Button
+                                title='Go to First Screen'
+                                buttonStyle={{
+                                    backgroundColor: '#2d5986',
+                                    borderRadius: 10,
+                                }}
+                                raised
+                                onPress={() => { this.onPressHandler(); info.refresh(); }}
+                            />
+                        </View>
                     </View>
-                    <Button
-                        title='Go to First Screen'
-                        buttonStyle={{
-                            backgroundColor: '#2d5986',
-                            borderRadius: 10,
-                        }}
-                        raised
-                        onPress={this.onPressHandler}
-                    />
-                </View>
-            </View>
+                }
+            </InfoContext.Consumer>
         )
     }
 };
