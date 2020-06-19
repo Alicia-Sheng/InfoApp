@@ -41,7 +41,7 @@ class SecondScreen extends React.Component {
                 year: this.state.year,
             })
         } else {
-            alert("Please answer the questions.")
+            alert("Please finish all the questions.")
         }
     };
 
@@ -98,7 +98,7 @@ class SecondScreen extends React.Component {
                     </View>
                     <Button
                         title='Go to Summary Screen'
-                        color='pink'
+                        color='#ff8080'
                         onPress={this.onPressHandler}
                     />
                 </View>
@@ -110,7 +110,7 @@ class SecondScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFE7E7',
+        backgroundColor: '#FFD9D9',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
         width: '85%',
         backgroundColor: '#fff',
         padding: 30,
+        borderRadius: 10,
     },
     body: {
         flex: 1,

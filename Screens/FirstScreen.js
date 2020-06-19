@@ -73,7 +73,7 @@ class FirstScreen extends React.Component {
                 year: this.state.year,
             })
         } else {
-            alert("Please answer the questions.")
+            alert("Please finish all the questions.")
         }
     };
 
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
         width: '85%',
         backgroundColor: '#fff',
         padding: 30,
+        borderRadius: 10,
     },
     body: {
         flex: 1,

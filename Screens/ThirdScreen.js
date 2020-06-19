@@ -34,6 +34,7 @@ class ThirdScreen extends React.Component {
                     </View>
                     <Button
                         title='Go to First Screen'
+                        color='#2d5986'
                         onPress={this.onPressHandler}
                     />
                 </View>
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
         width: '85%',
         backgroundColor: '#fff',
         padding: 30,
+        borderRadius: 10,
     },
     body: {
         flex: 1,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 15,
-        marginBottom: 10,
+        marginBottom: 20,
     },
 });
 
