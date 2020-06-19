@@ -4,12 +4,13 @@ import { Button } from 'react-native-elements';
 import { Picker } from '@react-native-community/picker';
 import data from '../data.js';
 import { InfoContext } from '../provider/InfoProvider';
+import { globalStyles } from '../globalStyles';
 
 const PickerList = ({ item, changeHandler, type }) => {
     return (
         <Picker
             selectedValue={item}
-            style={styles.picker}
+            style={globalStyles.picker}
             onValueChange={changeHandler}
         >
             <Picker.Item label={type} value='' />
@@ -37,26 +38,26 @@ class FirstScreen extends React.Component {
             <InfoContext.Consumer>
                 {
                     info =>
-                    <View style={styles.container}>
-                        <View style={styles.upContainer}>
-                            <View style={styles.body}>
+                    <View style={[globalStyles.container, styles.container]}>
+                        <View style={globalStyles.upContainer}>
+                            <View style={globalStyles.body}>
                                 <ScrollView>
-                                    <View style={styles.question}>
-                                        <Text style={styles.text}>Please enter your name here:</Text>
-                                        <View style={styles.inputContainer}>
+                                    <View style={globalStyles.question}>
+                                        <Text style={globalStyles.text}>Please enter your name here:</Text>
+                                        <View style={globalStyles.inputContainer}>
                                             <TextInput
                                                 placeholder='Name'
-                                                style={styles.input}
+                                                style={globalStyles.input}
                                                 onChangeText={info.setName}
                                                 value={info.name}
                                             />
                                         </View>
                                     </View>
-                                    <View style={styles.question}>
-                                        <Text style={styles.text}>Please select your birth month and date:</Text>
+                                    <View style={globalStyles.question}>
+                                        <Text style={globalStyles.text}>Please select your birth month and date:</Text>
                                         <Picker
                                             selectedValue={info.month}
-                                            style={styles.picker}
+                                            style={globalStyles.picker}
                                             onValueChange={info.setMonth}
                                         >
                                             <Picker.Item label='Month' value='' />
@@ -75,12 +76,12 @@ class FirstScreen extends React.Component {
                                         </Picker>
                                         <PickerList item={info.date} changeHandler={info.setDate} type={'Date'} />
                                     </View>
-                                    <View style={styles.question}>
-                                        <Text style={styles.text}>What is your favorite food?</Text>
-                                        <View style={styles.inputContainer}>
+                                    <View style={globalStyles.question}>
+                                        <Text style={globalStyles.text}>What is your favorite food?</Text>
+                                        <View style={globalStyles.inputContainer}>
                                             <TextInput
                                                 placeholder='Favorite Food'
-                                                style={styles.input}
+                                                style={globalStyles.input}
                                                 onChangeText={info.setFood}  
                                                 value={info.food}              
                                             />
@@ -90,10 +91,7 @@ class FirstScreen extends React.Component {
                             </View>
                             <Button
                                 title='Next'
-                                buttonStyle={{
-                                    backgroundColor: '#9CB2A5',
-                                    borderRadius: 10,
-                                }}
+                                buttonStyle={[globalStyles.button, styles.button]}
                                 raised
                                 onPress={() => {this.onPressHandler(info.name !== '' && info.month !== '' && info.date !== '' && info.food !== ''
                                 )}}
@@ -108,42 +106,16 @@ class FirstScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#E3DBD3',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    upContainer: {
-        height: '85%',
-        width: '85%',
-        backgroundColor: '#fff',
-        padding: 30,
-        borderRadius: 10,
-    },
-    body: {
-        flex: 1,
-        paddingBottom: 20,
-    },
-    question: {
-        marginBottom: 25,
-    },
-    input: {
-        marginTop: 10,
-        fontSize: 15,
-    },
-    picker: {
-        width: 150,
-    },
-    inputContainer: {
-        width: 200,
-        borderBottomColor: '#ccc',
-        borderBottomWidth: 1,
+        backgroundColor: '#E3D8D3'
     },
     text: {
         fontWeight: 'bold',
         fontSize: 15,
         marginBottom: 5,
     },
+    button: {
+        backgroundColor: '#9CB2A5',
+    }
 });
 
 export default FirstScreen;

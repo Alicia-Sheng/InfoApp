@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Picker } from '@react-native-community/picker';
 import { InfoContext } from '../provider/InfoProvider';
+import { globalStyles } from '../globalStyles';
 
 class SecondScreen extends React.Component {
 
@@ -23,14 +24,14 @@ class SecondScreen extends React.Component {
             <InfoContext.Consumer>
                 {
                     info =>
-                    <View style={styles.container}>
-                        <View style={styles.upContainer}>
-                            <View style={styles.body}>
-                                <View style={styles.question}>
-                                    <Text style={styles.text}>What is your favorite color?</Text>
+                    <View style={[globalStyles.container, styles.container]}>
+                        <View style={globalStyles.upContainer}>
+                            <View style={globalStyles.body}>
+                                <View style={globalStyles.question}>
+                                    <Text style={globalStyles.text}>What is your favorite color?</Text>
                                     <Picker
                                         selectedValue={info.color}
-                                        style={styles.picker}
+                                        style={globalStyles.picker}
                                         onValueChange={info.setColor}
                                     >
                                         <Picker.Item label='Color' value='' />
@@ -42,11 +43,11 @@ class SecondScreen extends React.Component {
                                         <Picker.Item label='Purple' value='Purple' />
                                     </Picker>
                                 </View>
-                                <View style={styles.question}>
-                                    <Text style={styles.text}>Which meal of the day is your favorite?</Text>
+                                <View style={globalStyles.question}>
+                                    <Text style={globalStyles.text}>Which meal of the day is your favorite?</Text>
                                     <Picker
                                         selectedValue={info.meal}
-                                        style={styles.picker}
+                                        style={globalStyles.picker}
                                         onValueChange={info.setMeal}
                                     >
                                         <Picker.Item label='Meal' value='' />
@@ -57,11 +58,11 @@ class SecondScreen extends React.Component {
                                         <Picker.Item label='Late Night' value='Late Night' />
                                     </Picker>
                                 </View>
-                                <View style={styles.question}>
-                                    <Text style={styles.text}>Which year are you in college?</Text>
+                                <View style={globalStyles.question}>
+                                    <Text style={globalStyles.text}>Which year are you in college?</Text>
                                     <Picker
                                         selectedValue={info.year}
-                                        style={styles.picker}
+                                        style={globalStyles.picker}
                                         onValueChange={info.setYear}
                                     >
                                         <Picker.Item label='Year' value='' />
@@ -74,10 +75,7 @@ class SecondScreen extends React.Component {
                             </View>
                             <Button
                                 title='Go to Summary Screen'
-                                buttonStyle={{
-                                    backgroundColor: '#E48EAD',
-                                    borderRadius: 10,
-                                }}
+                                buttonStyle={[globalStyles.button, styles.button]}
                                 raised
                                 onPress={() => {this.onPressHandler(info.color !== '' && info.meal !== '' && info.year !== '')}}
                             />
@@ -91,33 +89,11 @@ class SecondScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#C1A4C3',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
-    upContainer: {
-        height: '85%',
-        width: '85%',
-        backgroundColor: '#fff',
-        padding: 30,
-        borderRadius: 10,
-    },
-    body: {
-        flex: 1,
-        paddingBottom: 20,
-    },
-    picker: {
-        width: 150,
-    },
-    question: {
-        marginBottom: 25,
-    },
-    text: {
-        fontWeight: 'bold',
-        fontSize: 15,
-        marginBottom: 5,
-    },
+    button: {
+        backgroundColor: '#E48EAD',
+    }
 });
 
 export default SecondScreen;
