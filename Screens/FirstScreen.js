@@ -108,11 +108,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#E3D8D3'
     },
-    text: {
-        fontWeight: 'bold',
-        fontSize: 15,
-        marginBottom: 5,
-    },
     button: {
         backgroundColor: '#9CB2A5',
     }
