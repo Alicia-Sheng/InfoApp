@@ -72,7 +72,8 @@ If you want to run it on Android studio, set a simulator in AVD manager, start i
 
 ## Demo
 
-![First Screen 1](https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png?s=50)
+<img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png" width="100">
+
 ## License
 
 [MIT](LICENSE)
