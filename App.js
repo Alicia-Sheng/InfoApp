@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FirstScreen from './Screens/FirstScreen';
@@ -13,7 +12,7 @@ export default class App extends React.Component {
   render() {
     return (
       <InfoProvider>
-        <NavigationContainer style={styles.container}>
+        <NavigationContainer>
           <Stack.Navigator initialRouteName="First Screen">
             <Stack.Screen name="First Screen" component={FirstScreen} options={{ title: 'You Are...' }} />
             <Stack.Screen name="Second Screen" component={SecondScreen} options={{ title: 'Getting to Know Yourself Better' }}/>
@@ -23,13 +22,4 @@ export default class App extends React.Component {
       </InfoProvider>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
