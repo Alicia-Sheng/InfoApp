@@ -73,8 +73,20 @@ If you want to run it on Android studio, set a simulator in AVD manager, start i
 ## Demo
 
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png" width="33%"> <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/2.png" width="33%"> <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/3.png" width="33%">
+
+- The info app starts at the first screen. The users would see the app with all blank fields as shown in the first image.
+- After I filled in all fields, the app looks like the second image.
+- It can be seen in the third image that the page is scrollable.
+
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/4.png" width="33%"> <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/6.png" width="33%"> <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/5.png" width="33%">
+
+- After pressing "Next" on the first screen, the users would see the second screen with blank fields as shown in the fourth image.
+- After I filled in all fields, the app looks like the fifth image.
+- The sixth images shows a situation where the user didn't fill in all fields but clicked "Go to Summary Screen". An alarm pops out. The "Next" button on the first screen works the same.
+
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/7.png" width="33%">
+
+- The seventh image shows the third screen which is the summary screen. It prints out all information. If the user click the "Start Again" button, the app will lead the user to the first screen with all blank fields.
 
 ## License
 
