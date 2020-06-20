@@ -68,9 +68,11 @@ Please open your terminal or powershell, go to the path of InfoApp, and type in 
 npm start
 ```
 
-If you want to run it on Android studio, set a simulator in AVD manager, start it, and type a in your terminal or powershell.
+If you want to run it on Android studio, set a simulator in AVD manager, start it, and type "a" in your terminal or powershell.
 
 ## Demo
+
+![First Screen 1](https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png)
 
 ## License
 
