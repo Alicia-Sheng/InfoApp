@@ -72,7 +72,7 @@ If you want to run it on Android studio, set a simulator in AVD manager, start i
 
 ## Demo
 
-![First Screen 1](https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png)
+![First Screen 1](https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png | height=100)
 
 ## License
 
