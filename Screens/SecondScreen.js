@@ -67,7 +67,7 @@ class SecondScreen extends React.Component {
                                     >
                                         <Picker.Item label='Year' value='' />
                                         <Picker.Item label='Freshman' value='Freshman' />
-                                        <Picker.Item label='Sophomore' value='Sohomore' />
+                                        <Picker.Item label='Sophomore' value='Sophomore' />
                                         <Picker.Item label='Junior' value='Junior' />
                                         <Picker.Item label='Senior' value='Senior' />
                                     </Picker>
