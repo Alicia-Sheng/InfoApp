@@ -72,8 +72,8 @@ If you want to run it on Android studio, set a simulator in AVD manager, start i
 
 ## Demo
 
-<img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png" width="350"><img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/2.png" width="350">
-<img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/3.png" width="350">
+<img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/1.png" width="300"><img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/2.png" width="300">
+<img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/3.png" width="300">
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/4.png" width="350">
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/5.png" width="350">
 <img src="https://github.com/Alicia-Sheng/InfoApp/blob/master/screenshot/6.png" width="350">
