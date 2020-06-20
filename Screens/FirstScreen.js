@@ -93,7 +93,7 @@ class FirstScreen extends React.Component {
                                 title='Next'
                                 buttonStyle={styles.button}
                                 raised
-                                onPress={() => {this.onPressHandler(info.name !== '' && info.month !== '' && info.date !== '' && info.food !== '')}}
+                                onPress={() => {this.onPressHandler(info.firstNavigate())}}
                             />
                         </View>
                     </View>

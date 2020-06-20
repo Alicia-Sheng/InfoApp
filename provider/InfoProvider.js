@@ -42,12 +42,14 @@ class InfoProvider extends React.Component {
         this.setState({year});
     };
 
+    firstNavigate = this.firstNavigate.bind(this);
     firstNavigate() {
         return (
             this.state.name !== '' && this.state.month !== '' && this.state.date !== '' && this.state.food !== ''
         )
     };
 
+    secondNavigate = this.secondNavigate.bind(this);
     secondNavigate() {
         return (
             this.state.color !== '' && this.state.meal !== '' && this.state.year !== ''
