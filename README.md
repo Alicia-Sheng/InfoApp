@@ -43,27 +43,32 @@ UniSelfCare Intern Application Project for Alicia Sheng.
 
 ### Install
 
-- First please go to the link and download the latest version of Node.js.
+First please go to the link and download the latest version of Node.js.
 https://nodejs.org/en/download/
-- Also, please follow the link below and download Expo.
+
+Also, please follow the link below and download Expo.
 https://expo.io/
-- Remember to clone or download InfoApp to your local path.
-- After downloading Node.js, Expo, and InfoApp successfully, please open your terminal or powershell, go to the path of InfoApp, and type in the sentence below.
+
+Remember to clone or download InfoApp to your local path.
+
+After downloading Node.js, Expo, and InfoApp successfully, please open your terminal or powershell, go to the path of InfoApp, and type in the sentence below.
+
 ```sh
 npm install
 ```
-- If you want to check the file on android simulator (which is something I am using), please go the the link and download the latest version of Android Studio.
+
+If you want to check the file on android simulator (which is something I am using), please go the the link and download the latest version of Android Studio.
 https://developer.android.com/studio
 
 ### Run
 
-- Please open your terminal or powershell, go to the path of InfoApp, and type in the sentence below.
+Please open your terminal or powershell, go to the path of InfoApp, and type in the sentence below.
 
 ```sh
 npm start
 ```
 
-- If you want to run it on Android studio, set a simulator in AVD manager, start it, and type a in your terminal or powershell.
+If you want to run it on Android studio, set a simulator in AVD manager, start it, and type a in your terminal or powershell.
 
 ## Demo
 
