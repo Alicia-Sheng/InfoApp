@@ -91,10 +91,9 @@ class FirstScreen extends React.Component {
                             </View>
                             <Button
                                 title='Next'
-                                buttonStyle={[globalStyles.button, styles.button]}
+                                buttonStyle={styles.button}
                                 raised
-                                onPress={() => {this.onPressHandler(info.name !== '' && info.month !== '' && info.date !== '' && info.food !== ''
-                                )}}
+                                onPress={() => {this.onPressHandler(info.name !== '' && info.month !== '' && info.date !== '' && info.food !== '')}}
                             />
                         </View>
                     </View>

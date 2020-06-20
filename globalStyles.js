@@ -18,7 +18,8 @@ export const globalStyles = StyleSheet.create({
         paddingBottom: 20,
     },
     text: {
-        fontSize: 16,
+        fontWeight: 'bold',
+        fontSize: 15,
         marginBottom: 15,
     },
     question: {
@@ -34,62 +35,5 @@ export const globalStyles = StyleSheet.create({
         width: 200,
         borderBottomColor: '#ccc',
         borderBottomWidth: 1,
-    },
-    button: {
-        borderRadius: 10,
-    },
-    redBackground: {
-
-    },
-    orangeBackground: {
-    
-    },
-    yellowBackground: {
-    
-    },
-    greenBackground: {
-    
-    },
-    blueBackground: {
-        backgroundColor: '#8BA4B3',
-    },
-    purpleBackground: {
-    
-    },
-    redText: {
-
-    },
-    orangeText: {
-
-    },
-    yellowText: {
-
-    },
-    greenText: {
-
-    },
-    blueText: {
-        color: '#2d5986',
-    },
-    purpleText: {
-
-    },
-    redButton: {
-
-    },
-    orangeButton: {
-    
-    },
-    yellowButton: {
-    
-    },
-    greenButton: {
-    
-    },
-    blueButton: {
-        backgroundColor: '#2d5986',
-    },
-    purpleButton: {
-    
     },
 });

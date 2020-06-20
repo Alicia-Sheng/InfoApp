@@ -75,7 +75,7 @@ class SecondScreen extends React.Component {
                             </View>
                             <Button
                                 title='Go to Summary Screen'
-                                buttonStyle={[globalStyles.button, styles.button]}
+                                buttonStyle={styles.button}
                                 raised
                                 onPress={() => {this.onPressHandler(info.color !== '' && info.meal !== '' && info.year !== '')}}
                             />
