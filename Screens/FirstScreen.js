@@ -25,6 +25,7 @@ class FirstScreen extends React.Component {
         super(props);
     };
 
+    this.onPressHandler = this.onPressHandler.bind(this);
     onPressHandler = (navigate) => {
         if (navigate) {
             this.props.navigation.navigate('Second Screen')
@@ -93,7 +94,7 @@ class FirstScreen extends React.Component {
                                 title='Next'
                                 buttonStyle={styles.button}
                                 raised
-                                onPress={() => {this.onPressHandler(info.firstNavigate())}}
+                                onPress={this.onPressHandler(info.firstNavigate())}
                             />
                         </View>
                     </View>
