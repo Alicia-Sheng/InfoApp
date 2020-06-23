@@ -11,6 +11,7 @@ class SecondScreen extends React.Component {
         super(props);
     };
 
+    this.onPressHandler = this.onPressHandler.bind(this);
     onPressHandler = (navigate) => {
         if (navigate) {
             this.props.navigation.navigate('Third Screen')
@@ -77,7 +78,7 @@ class SecondScreen extends React.Component {
                                 title='Go to Summary Screen'
                                 buttonStyle={styles.button}
                                 raised
-                                onPress={() => {this.onPressHandler(info.secondNavigate())}}
+                                onPress={this.onPressHandler(info.secondNavigate())}
                             />
                         </View>
                     </View>
