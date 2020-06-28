@@ -1,6 +1,6 @@
 # InfoApp
 
-An app which collects the users' information.
+An app which collects the users' information and prints out the summary.
 
 ## Table of Contents
 
