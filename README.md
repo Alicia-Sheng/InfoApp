@@ -19,7 +19,7 @@ An app which collects the users' information and prints out the summary.
 
 ## Background
 
-- It is an app which collects the users' information and prints it out.
+- It is an app which collects the users' information and prints out the summary.
 
 ## Features
 
